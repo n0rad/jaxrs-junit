@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>net.awired.jaxrs.junit</groupId>
+	<artifactId>jaxrs-junit</artifactId>
+	<packaging>jar</packaging>
+	<name>Jaxrs junit</name>
+	<description>Test your jax-rs server in IT with java method calls only using proxies and dedicated rules on junit</description>
+    <version>0.5-SNAPSHOT</version>
+
+    <parent>
+        <groupId>net.awired.parent</groupId>
+        <artifactId>parent-java</artifactId>
+        <version>1.16</version>
+    </parent>
+
+    <scm>
+        <connection>scm:git:git://github.com/awired/jaxrs-test.git</connection>
+        <developerConnection>scm:git:git@github.com:awired/jaxrs-test.git</developerConnection>
+        <url>https://github.com/awired/jaxrs-test</url>
+        <tag>HEAD</tag>
+    </scm>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>net.awired.ajsl</groupId>
+			<artifactId>ajsl-ws</artifactId>
+		</dependency>		
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>2.1.4</version>
+		</dependency>
+	</dependencies>
+</project> 
