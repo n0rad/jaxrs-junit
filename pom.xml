@@ -16,17 +16,17 @@
     </parent>
 
     <scm>
-        <connection>scm:git:git://github.com/awired/jaxrs-test.git</connection>
-        <developerConnection>scm:git:git@github.com:awired/jaxrs-test.git</developerConnection>
-        <url>https://github.com/awired/jaxrs-test</url>
+        <connection>scm:git:git://github.com/awired/jaxrs-junit.git</connection>
+        <developerConnection>scm:git:git@github.com:awired/jaxrs-junit.git</developerConnection>
+        <url>https://github.com/awired/jaxrs-junit</url>
         <tag>HEAD</tag>
     </scm>
 
-
 	<dependencies>
 		<dependency>
-			<groupId>net.awired.ajsl</groupId>
-			<artifactId>ajsl-ws</artifactId>
+			<groupId>net.awired.jaxrs.client.server</groupId>
+			<artifactId>jaxrs-client-server</artifactId>
+			<version>0.5-SNAPSHOT</version>
 		</dependency>		
 
 		<dependency>

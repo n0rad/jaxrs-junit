@@ -1,10 +1,10 @@
-package net.awired.ajsl.test;
+package net.awired.jaxrs.junit;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import net.awired.ajsl.ws.rest.RestBuilder;
+import net.awired.jaxrs.client.server.rest.RestBuilder;
 import org.apache.cxf.endpoint.Server;
 import org.apache.cxf.interceptor.Interceptor;
 import org.apache.cxf.message.Message;

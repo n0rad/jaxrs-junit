@@ -1,4 +1,4 @@
-package net.awired.ajsl.test;
+package net.awired.jaxrs.junit;
 
 import java.io.IOException;
 import java.io.OutputStream;
