@@ -20,11 +20,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import net.awired.jaxrs.client.server.rest.RestBuilder;
 import org.apache.cxf.endpoint.Server;
 import org.apache.cxf.interceptor.Interceptor;
 import org.apache.cxf.message.Message;
 import org.junit.rules.ExternalResource;
+import fr.norad.jaxrs.client.server.rest.RestBuilder;
 
 public class RestServerRule extends ExternalResource {
     private Map<Class<?>, Object> resources = new HashMap<Class<?>, Object>();
