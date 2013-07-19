@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.awired.jaxrs.junit</groupId>
+	<groupId>fr.norad.jaxrs.junit</groupId>
 	<artifactId>jaxrs-junit</artifactId>
 	<packaging>jar</packaging>
 	<name>Jaxrs junit</name>
@@ -10,21 +10,21 @@
     <version>0.5-SNAPSHOT</version>
 
     <parent>
-        <groupId>net.awired.parent</groupId>
+        <groupId>fr.norad.parent</groupId>
         <artifactId>parent-java</artifactId>
-        <version>1.16</version>
+        <version>1.17-SNAPSHOT</version>
     </parent>
 
     <scm>
-        <connection>scm:git:git://github.com/awired/jaxrs-junit.git</connection>
-        <developerConnection>scm:git:git@github.com:awired/jaxrs-junit.git</developerConnection>
-        <url>https://github.com/awired/jaxrs-junit</url>
+        <connection>scm:git:git://github.com/n0rad/jaxrs-junit.git</connection>
+        <developerConnection>scm:git:git@github.com:n0rad/jaxrs-junit.git</developerConnection>
+        <url>https://github.com/n0rad/jaxrs-junit</url>
         <tag>HEAD</tag>
     </scm>
 
 	<dependencies>
 		<dependency>
-			<groupId>net.awired.jaxrs.client.server</groupId>
+			<groupId>fr.norad.jaxrs.client.server</groupId>
 			<artifactId>jaxrs-client-server</artifactId>
 			<version>0.5-SNAPSHOT</version>
 		</dependency>		

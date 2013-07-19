@@ -14,7 +14,7 @@
  *     See the License for the specific language governing permissions and
  *     limitations under the License.
  */
-package net.awired.jaxrs.junit;
+package fr.norad.jaxrs.junit;
 
 import java.io.OutputStream;
 import java.io.PrintStream;
