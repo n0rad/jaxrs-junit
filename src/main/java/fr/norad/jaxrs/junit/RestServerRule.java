@@ -27,10 +27,7 @@ import org.junit.rules.ExternalResource;
 import fr.norad.jaxrs.client.server.rest.RestBuilder;
 
 public class RestServerRule extends ExternalResource {
-    private Map<Class<?>, Object> resources = new HashMap<Class<?>, Object>();
     private Server server;
-    private String listenAddress;
-    private boolean log = true;
     private final List<Object> additionalProviders = new ArrayList<Object>();
     private final List<Interceptor<? extends Message>> inInterceptors = new ArrayList<Interceptor<? extends Message>>();
     private final List<Interceptor<? extends Message>> outInterceptors = new ArrayList<Interceptor<? extends Message>>();
@@ -40,7 +37,11 @@ public class RestServerRule extends ExternalResource {
      *            ex: http://localhost:7686
      */
     public RestServerRule(String listenAddress, Object... resource) {
-        this.listenAddress = listenAddress;
+        this(new RestBuilder(), listenAddress, resource);
+    }
+
+    public RestServerRule(RestBuilder restBuilder, String listenAddress, Object... resource) {
+        Map<Class<?>, Object> resources = new HashMap<Class<?>, Object>();
         for (Object obj : resource) {
             try {
                 resources.put(obj.getClass(), obj);
@@ -48,43 +49,31 @@ public class RestServerRule extends ExternalResource {
                 throw new RuntimeException(e);
             }
         }
+
+        server = restBuilder.buildServer(listenAddress, resources.values());
     }
 
-    public RestServerRule addInInterceptor(Interceptor<? extends Message> inInterceptor) {
-        inInterceptors.add(inInterceptor);
-        return this;
-    }
-
-    public RestServerRule addProvider(Object provider) {
-        additionalProviders.add(provider);
-        return this;
-    }
-
-    public RestServerRule addOutInterceptor(Interceptor<? extends Message> outInterceptor) {
-        outInterceptors.add(outInterceptor);
-        return this;
-    }
-
-    @Override
-    public void before() throws Throwable {
-        RestBuilder restContext = new RestBuilder();
-        restContext.addAllInInterceptor(inInterceptors);
-        restContext.addAllOutInterceptor(outInterceptors);
-        restContext.addAllProvider(additionalProviders);
-        server = restContext.buildServer(listenAddress, resources.values());
-    }
+    //        restContext.addAllInInterceptor(inInterceptors);
+    //        restContext.addAllOutInterceptor(outInterceptors);
+    //        restContext.addAllProvider(additionalProviders);
+    //    public RestServerRule addInInterceptor(Interceptor<? extends Message> inInterceptor) {
+    //        inInterceptors.add(inInterceptor);
+    //        return this;
+    //    }
+    //
+    //    public RestServerRule addProvider(Object provider) {
+    //        additionalProviders.add(provider);
+    //        return this;
+    //    }
+    //
+    //    public RestServerRule addOutInterceptor(Interceptor<? extends Message> outInterceptor) {
+    //        outInterceptors.add(outInterceptor);
+    //        return this;
+    //    }
 
     @Override
     public void after() {
         server.stop();
-    }
-
-    public boolean isLog() {
-        return log;
-    }
-
-    public void setLog(boolean log) {
-        this.log = log;
     }
 
 }
