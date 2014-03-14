@@ -1,12 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>fr.norad.jaxrs.junit</groupId>
-	<artifactId>jaxrs-junit</artifactId>
-	<packaging>jar</packaging>
-	<name>Jaxrs junit</name>
-	<description>Test your jax-rs server in IT with java method calls only using proxies and dedicated rules on junit</description>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fr.norad.jaxrs.junit</groupId>
+    <artifactId>jaxrs-junit</artifactId>
+    <packaging>jar</packaging>
+    <name>Jaxrs junit</name>
+    <description>Test your jax-rs server in IT with java method calls only using proxies and dedicated rules on junit
+    </description>
     <version>0.5-SNAPSHOT</version>
 
     <parent>
@@ -22,22 +23,22 @@
         <tag>HEAD</tag>
     </scm>
 
-	<dependencies>
-		<dependency>
-			<groupId>fr.norad.jaxrs.client.server</groupId>
-			<artifactId>jaxrs-client-server</artifactId>
-			<version>0.6-SNAPSHOT</version>
-		</dependency>		
+    <dependencies>
+        <dependency>
+            <groupId>fr.norad.jaxrs.client.server</groupId>
+            <artifactId>jaxrs-client-server-core</artifactId>
+            <version>0.8-SNAPSHOT</version>
+        </dependency>
 
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.jaxrs</groupId>
-			<artifactId>jackson-jaxrs-json-provider</artifactId>
-			<version>2.1.4</version>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>2.1.4</version>
+        </dependency>
+    </dependencies>
 </project> 

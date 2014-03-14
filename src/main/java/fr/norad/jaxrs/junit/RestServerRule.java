@@ -24,6 +24,8 @@ import org.apache.cxf.endpoint.Server;
 import org.apache.cxf.interceptor.Interceptor;
 import org.apache.cxf.message.Message;
 import org.junit.rules.ExternalResource;
+import com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider;
+import fr.norad.jaxrs.client.server.resource.mapper.ErrorExceptionMapper;
 import fr.norad.jaxrs.client.server.rest.RestBuilder;
 
 public class RestServerRule extends ExternalResource {
@@ -33,11 +35,12 @@ public class RestServerRule extends ExternalResource {
     private final List<Interceptor<? extends Message>> outInterceptors = new ArrayList<Interceptor<? extends Message>>();
 
     /**
-     * @param listenAddress
-     *            ex: http://localhost:7686
+     * @param listenAddress ex: http://localhost:7686
      */
     public RestServerRule(String listenAddress, Object... resource) {
-        this(new RestBuilder(), listenAddress, resource);
+        this(new RestBuilder()
+                .addProvider(new JacksonJaxbJsonProvider())
+                .addProvider(new ErrorExceptionMapper()), listenAddress, resource);
     }
 
     public RestServerRule(RestBuilder restBuilder, String listenAddress, Object... resource) {
